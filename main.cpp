@@ -12,16 +12,13 @@ int main() {
     std::cout << ip_int_to_str(ip_pool_int);
 
     // filter by first byte and output
-    auto sorted1 = first_one_sort(ip_pool_int);
-    std::cout << ip_int_to_str(sorted1);
+    first_one_sort(ip_pool_int);
 
     // filter by first and second bytes and output
-    auto sorted2 = first_46_sec_70(ip_pool_int);
-    std::cout << ip_int_to_str(sorted2);
+    first_46_sec_70(ip_pool_int);
 
     // filter by any byte and output
-    auto sorted3 = any_46(ip_pool_int);
-    std::cout << ip_int_to_str(sorted3);
+    any_46(ip_pool_int);
 
   } catch (const std::exception& e) {
     std::cerr << e.what() << std::endl;

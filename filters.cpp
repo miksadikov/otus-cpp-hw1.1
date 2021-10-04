@@ -58,32 +58,47 @@ void reverse_lex_sort(pool_int& ip_int) {
   sort(ip_int.begin(), ip_int.end(), std::greater<std::vector<int>>());
 }
 
-pool_int first_one_sort(pool_int& ip_int) {
-  pool_int out;
+void first_one_sort(pool_int& ip_int) {
+  std::string res = "";
   for (auto& ip : ip_int) {
     if (ip[0] == 1) {
-      out.push_back(ip);
+      std::string str = "";
+      for (auto& ip_part : ip) {
+        res += str + std::to_string(ip_part);
+        str = ".";
+      }
+      res += "\n";
     }
   }
-  return out;
+  std::cout << res;
 }
 
-pool_int first_46_sec_70(pool_int& ip_int) {
-  pool_int out;
+void first_46_sec_70(pool_int& ip_int) {
+  std::string res = "";
   for (auto& ip : ip_int) {
     if ((ip[0] == 46) && (ip[1] == 70)) {
-      out.push_back(ip);
+      std::string str = "";
+      for (auto& ip_part : ip) {
+        res += str + std::to_string(ip_part);
+        str = ".";
+      }
+      res += "\n";
     }
   }
-  return out;
+  std::cout << res;
 }
 
-pool_int any_46(pool_int& ip_int) {
-  pool_int out;
+void any_46(pool_int& ip_int) {
+  std::string res = "";
   for (auto& ip : ip_int) {
     if (find(ip.begin(), ip.end(), 46) != ip.end()) {
-      out.push_back(ip);
+      std::string str = "";
+      for (auto& ip_part : ip) {
+        res += str + std::to_string(ip_part);
+        str = ".";
+      }
+      res += "\n";
     }
   }
-  return out;
+  std::cout << res;
 }
