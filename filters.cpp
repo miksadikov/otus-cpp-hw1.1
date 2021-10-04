@@ -5,6 +5,7 @@
 void stream_to_pool(std::istream& in, pool_int& pool) {
   std::string line;
 
+  pool.clear();
   while (getline(in, line)) {
     std::vector<std::string> v = split(line, '\t');
     auto svec = split(v.at(0), '.');
