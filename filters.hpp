@@ -7,7 +7,7 @@
 
 using pool_int = std::vector<std::vector<int>>;
 
-int file_to_pool(std::string file_name, pool_int& pool);
+void stream_to_pool(std::istream& in, pool_int& pool);
 std::vector<std::string> split(const std::string& str, char d);
 std::vector<int> strvec_to_intvec(std::vector<std::string>& strvec);
 std::string ip_int_to_str(pool_int& ip_int);

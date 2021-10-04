@@ -8,10 +8,7 @@
 
 TEST(Test, test_lex_sort) {
   pool_int pool;
-  if (file_to_pool("test/testfile1.tsv", pool) < 0) {
-    FAIL();
-    return;
-  }
+  stream_to_pool(std::cin, pool);
 
   reverse_lex_sort(pool);
   std::string result_str = ip_int_to_str(pool);

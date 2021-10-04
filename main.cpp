@@ -4,9 +4,7 @@
 
 int main() {
   pool_int ip_pool_int;
-  if (file_to_pool("ip_filter.tsv", ip_pool_int) < 0) {
-    return -1;
-  }
+  stream_to_pool(std::cin, ip_pool_int);
 
   try {
     // reverse lexicographic sort

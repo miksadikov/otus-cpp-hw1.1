@@ -2,22 +2,14 @@
 
 #include "filters.hpp"
 
-int file_to_pool(std::string file_name, pool_int& pool) {
-  std::fstream ip_pool_file;
+void stream_to_pool(std::istream& in, pool_int& pool) {
   std::string line;
 
-  ip_pool_file.open(file_name, std::ios::in);
-  if (!ip_pool_file.is_open()) {
-    std::cout << "can't open file " << file_name << std::endl;
-    return -1;
-  }
-  while (getline(ip_pool_file, line)) {
+  while (getline(in, line)) {
     std::vector<std::string> v = split(line, '\t');
     auto svec = split(v.at(0), '.');
     pool.push_back(strvec_to_intvec(svec));
   }
-  ip_pool_file.close();
-  return 0;
 }
 
 std::vector<std::string> split(const std::string& str, char d) {
